@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/josephtball/NYT-React-App#readme",
   "dependencies": {
+    "axios": "^0.16.2",
     "express": "^4.15.4",
     "mongoose": "^4.11.6",
     "react": "^15.6.1",

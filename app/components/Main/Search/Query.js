@@ -1,6 +1,14 @@
 var React = require('react');
 
 var Query = React.createClass({
+	getInitialState: function() {
+		return {
+			topic: '',
+			start: 0,
+			end: 0,
+			page: 0,
+		}
+	},
 	render: function() {
 		return (
 			<div className='panel'>
@@ -9,7 +17,7 @@ var Query = React.createClass({
 					<form>
 						<div className='form-group'>
 							<label htmlFor='topic'>Topic</label>
-							<input type='text' className='form-control' id='topic' placeholder='Enter Topic' />
+							<input type='text' className='form-control' id='topic' placeholder='Enter Topic' required='required'/>
 						</div>
 						<div className='form-group'>
 							<label htmlFor='start-year'>Start Year</label>

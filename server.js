@@ -33,7 +33,3 @@ db.once('open', function() {
 app.listen(port, function() {
 	console.log('Server listening on PORT '+port);
 });
-
-/*
-NYT API Key: 4924d0618ea04c3aa5f449fd4c16a340
-*/
