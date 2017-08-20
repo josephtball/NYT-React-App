@@ -1,10 +1,10 @@
-var React = require('react');
+import React from 'react';
 
-var Search = require('./Main/Search.js');
-var Saved = require('./Main/Saved.js');
+import Search from './Main/Search.js';
+import Saved from './Main/Saved.js';
 
-var Main = React.createClass({
-	render: function() {
+class Main extends React.Component {
+	render() {
 		return (
 			<div>
 				<header className='jumbotron'>
@@ -22,6 +22,6 @@ var Main = React.createClass({
 			</div>
 		);
 	}
-});
+};
 
-module.exports = Main;
+export default Main;

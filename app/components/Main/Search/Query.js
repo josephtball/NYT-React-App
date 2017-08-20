@@ -1,31 +1,47 @@
-var React = require('react');
+import React from 'react';
 
-var Query = React.createClass({
-	getInitialState: function() {
-		return {
+class Query extends React.Component {
+	constructor(props) {
+		super(props);
+		
+		this.state = {
 			topic: '',
 			start: 0,
-			end: 0,
-			page: 0,
-		}
-	},
-	render: function() {
+			end: 0
+		};
+
+		this.searchSubmit = this.searchSubmit.bind(this);
+		this.handleChange = this.handleChange.bind(this);
+	}
+
+	handleChange(event) {
+		let newState = {};
+		newState[event.target.id] = event.target.value;
+		this.setState(newState);
+	}
+
+	searchSubmit(event) {
+		event.preventDefault();
+		this.props.setSearch(this.state.topic, this.state.start, this.state.end);
+	}
+
+	render() {
 		return (
 			<div className='panel'>
 				<h2 className='panel-header'>Search Articles</h2>
 				<div className='panel-content'>
-					<form>
+					<form onSubmit={this.searchSubmit}>
 						<div className='form-group'>
 							<label htmlFor='topic'>Topic</label>
-							<input type='text' className='form-control' id='topic' placeholder='Enter Topic' required='required'/>
+							<input onChange={this.handleChange} type='text' className='form-control' id='topic' placeholder='Enter Topic' required='required'/>
 						</div>
 						<div className='form-group'>
-							<label htmlFor='start-year'>Start Year</label>
-							<input type='text' className='form-control' id='start-year' placeholder='Ex: 1999' />
+							<label htmlFor='start'>Start Year</label>
+							<input onChange={this.handleChange} type='text' className='form-control' id='start' placeholder='Ex: 1999' />
 						</div>
 						<div className='form-group'>
-							<label htmlFor='end-year'>End Year</label>
-							<input type='text' className='form-control' id='end-year' placeholder='Ex: 1999' />
+							<label htmlFor='end'>End Year</label>
+							<input onChange={this.handleChange} type='text' className='form-control' id='end' placeholder='Ex: 1999' />
 						</div>
 						<button type="submit" className="btn btn-success">Search</button>
 					</form>
@@ -33,6 +49,6 @@ var Query = React.createClass({
 			</div>
 		);
 	}
-});
+};
 
-module.exports = Query;
+export default Query;

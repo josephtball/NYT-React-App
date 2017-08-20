@@ -10,7 +10,7 @@ module.exports = {
 
   // This section desribes the transformations we will perform
   module: {
-    loaders: [
+    rules: [
       {
         // Only working with files that are in a .js or .jsx extension
         test: /\.jsx?$/,

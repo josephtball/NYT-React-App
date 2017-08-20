@@ -1,26 +1,37 @@
-var React = require('react');
+import React from 'react';
 
-var helpers = require('../../utils/helpers.js');
-var Query = require('./Search/Query.js');
-var Results = require('./Search/Results.js');
+import Query from './Search/Query.js';
+import Results from './Search/Results.js';
 
-var Search = React.createClass({
-	getInitialState: function() {
-		return {
+class Search extends React.Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
 			topic: '',
 			start: 0,
 			end: 0,
-			page: 0,
 		}
-	},
-	render: function() {
+
+		this.setSearch = this.setSearch.bind(this);
+	}
+
+	setSearch(topic, start, end) {
+		this.setState({
+			topic: topic,
+			start: start,
+			end: end
+		});
+	}
+
+	render() {
 		return (
 			<div>
-				<Query />
-				<Results />
+				<Query setSearch={this.setSearch}/>
+				<Results topic={this.state.topic} start={this.state.start} end={this.state.end}/>
 			</div>
 		);
 	}
-});
+};
 
-module.exports = Search;
+export default Search;

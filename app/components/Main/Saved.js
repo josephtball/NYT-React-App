@@ -1,7 +1,7 @@
-var React = require('react');
+import React from 'react';
 
-var Saved = React.createClass({
-	render: function() {
+class Saved extends React.Component {
+	render() {
 		return (
 			<div className='panel'>
 				<h2 className='panel-header'>Saved Articles</h2>
@@ -11,6 +11,6 @@ var Saved = React.createClass({
 			</div>
 		);
 	}
-});
+};
 
-module.exports = Saved;
+export default Saved;
