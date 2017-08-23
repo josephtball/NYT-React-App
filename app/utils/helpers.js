@@ -13,7 +13,7 @@ const helpers = {
 		}
 		url += '&page='+page;
 		return axios.get(url).then((response) => {
-			return response.data;
+			return response.data.response.docs;
 		});
 	}
 };

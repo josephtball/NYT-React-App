@@ -1,9 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router';
 
-import Search from './Main/Search.js';
-import Saved from './Main/Saved.js';
-
-class Main extends React.Component {
+export default class Main extends React.Component {
 	render() {
 		return (
 			<div>
@@ -14,8 +12,11 @@ class Main extends React.Component {
 					</div>
 				</header>
 				<main className='container'>
-					<Search />
-					<Saved />
+					<Link to='/search'>Search</Link>
+					<Link to='/saved'>Saved</Link>
+					<div>
+						{this.props.children}
+					</div>
 				</main>
 				<footer>
 				</footer>
@@ -23,5 +24,3 @@ class Main extends React.Component {
 		);
 	}
 };
-
-export default Main;

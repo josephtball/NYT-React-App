@@ -12,7 +12,7 @@ var ArticleSchema = new Schema({
 		required: true
 	},
 	url: {
-		type: String,
+		type: Date,
 		required: true
 	},
 	notes: [{

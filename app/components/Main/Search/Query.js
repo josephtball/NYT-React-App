@@ -1,13 +1,13 @@
 import React from 'react';
 
-class Query extends React.Component {
+export default class Query extends React.Component {
 	constructor(props) {
 		super(props);
 		
 		this.state = {
 			topic: '',
-			start: 0,
-			end: 0
+			start: '',
+			end: ''
 		};
 
 		this.searchSubmit = this.searchSubmit.bind(this);
@@ -16,13 +16,14 @@ class Query extends React.Component {
 
 	handleChange(event) {
 		let newState = {};
-		newState[event.target.id] = event.target.value;
+		newState[event.target.id] = event.target.value.trim();
 		this.setState(newState);
 	}
 
 	searchSubmit(event) {
 		event.preventDefault();
-		this.props.setSearch(this.state.topic, this.state.start, this.state.end);
+		const {topic, start, end} = this.state;
+		this.props.setQuery(topic, start, end);
 	}
 
 	render() {
@@ -50,5 +51,3 @@ class Query extends React.Component {
 		);
 	}
 };
-
-export default Query;

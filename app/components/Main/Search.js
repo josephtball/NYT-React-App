@@ -1,37 +1,34 @@
 import React from 'react';
 
-import Query from './Search/Query.js';
-import Results from './Search/Results.js';
+import helpers from '../../utils/helpers';
 
-class Search extends React.Component {
+import Query from './Search/Query';
+import Results from './Search/Results';
+
+export default class Search extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			topic: '',
-			start: 0,
-			end: 0,
+			results: []
 		}
-
-		this.setSearch = this.setSearch.bind(this);
+		this.setQuery = this.setQuery.bind(this);
 	}
 
-	setSearch(topic, start, end) {
-		this.setState({
-			topic: topic,
-			start: start,
-			end: end
+	setQuery(newTopic, newStart, newEnd) {
+		helpers.searchArticles(newTopic, newStart, newEnd, '0').then((data)=> {
+			this.setState({ 
+				results:  data 
+			});
 		});
 	}
 
 	render() {
 		return (
 			<div>
-				<Query setSearch={this.setSearch}/>
-				<Results topic={this.state.topic} start={this.state.start} end={this.state.end}/>
+				<Query setQuery={this.setQuery} />
+				<Results results={this.state.results} />
 			</div>
 		);
 	}
 };
-
-export default Search;

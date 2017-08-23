@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Saved extends React.Component {
+export default class Saved extends React.Component {
 	render() {
 		return (
 			<div className='panel'>
@@ -12,5 +12,3 @@ class Saved extends React.Component {
 		);
 	}
 };
-
-export default Saved;

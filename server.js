@@ -1,6 +1,8 @@
 // node packages
 var express = require('express');
 var mongoose = require('mongoose');
+var bodyParser = require('body-parser');
+var logger = require('morgan');
 
 // import files
 var htmlRoutes = require('./routes/htmlRoutes.js');
@@ -11,6 +13,11 @@ var port = process.env.PORT || 8080;
 
 // setup express
 var app = express();
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 // set static folder
 app.use(express.static(__dirname + "/public"));
 
