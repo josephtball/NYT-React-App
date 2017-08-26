@@ -1,0 +1,21 @@
+body {
+	background-image: url("../media/images/paper.png");
+}
+.panel {
+	border: 1px solid #17a2b8;
+	border-radius: 5px;
+	margin-bottom: 1em;
+	background-color: white;
+}
+.panel-header {
+	background-color: #17a2b8;
+	text-align: center;
+	color: white;
+}
+.panel-content {
+	margin: 1em;
+}
+.jumbotron {
+	background-color: #17a2b8;
+	color: white;
+}
