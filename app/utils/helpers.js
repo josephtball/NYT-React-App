@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const helpers = {
+export default const helpers = {
 	searchArticles: (topic, start, end, page) => {
 		let url = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=4924d0618ea04c3aa5f449fd4c16a340&q='+topic;
 		if (start != undefined) {
@@ -17,5 +17,3 @@ const helpers = {
 		});
 	}
 };
-
-export default helpers
