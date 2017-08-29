@@ -38,11 +38,11 @@ export default class Query extends React.Component {
 						</div>
 						<div className='form-group'>
 							<label htmlFor='start'>Start Year</label>
-							<input onChange={this.handleChange} type='text' className='form-control' id='start' placeholder='Ex: 1999' />
+							<input onChange={this.handleChange} type='text' className='form-control' id='start' placeholder='Ex: 1999'  required='required'/>
 						</div>
 						<div className='form-group'>
 							<label htmlFor='end'>End Year</label>
-							<input onChange={this.handleChange} type='text' className='form-control' id='end' placeholder='Ex: 1999' />
+							<input onChange={this.handleChange} type='text' className='form-control' id='end' placeholder='Ex: 1999'  required='required'/>
 						</div>
 						<button type="submit" className="btn btn-success">Search</button>
 					</form>
