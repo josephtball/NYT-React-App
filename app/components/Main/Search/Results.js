@@ -3,10 +3,6 @@ import React from 'react';
 export default class Results extends React.Component {
 	constructor(props) {
 		super(props);
-
-		this.state = {
-			page: 0
-		}
 	}
 
 	render() {
@@ -47,10 +43,6 @@ export default class Results extends React.Component {
 								})
 							}
 					</div>
-					<ul className='pagination justify-content-center'>
-						<li className='page-item'><a className='page-link'><span aria-hidden='true'>&laquo;</span> Previous</a></li>
-						<li className='page-item'><a className='page-link'>Next <span aria-hidden='true'>&raquo;</span></a></li>
-					</ul>
 				</div>
 			);
 		}
