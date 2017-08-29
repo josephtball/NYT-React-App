@@ -26,8 +26,8 @@ app.use('/api', apiRoutes);
 
 // setup connection to database
 mongoose.Promise = Promise;
-// mongoose.connect('-- get link from heroku --');
-mongoose.connect('mongodb://localhost/nytreact');
+mongoose.connect('mongodb://heroku_vq3vzw9z:sg5che4ujlt4v5qpk3hopb7191@ds161913.mlab.com:61913/heroku_vq3vzw9z');
+// mongoose.connect('mongodb://localhost/nytreact');
 var db = mongoose.connection;
 db.on('error', function(error) {
 	console.log('Mongoose error: ', error);
