@@ -44,7 +44,7 @@ export default class Query extends React.Component {
 							<label htmlFor='end'>End Year</label>
 							<input onChange={this.handleChange} type='text' className='form-control' id='end' placeholder='Ex: 1999'  required='required'/>
 						</div>
-						<button type="submit" className="btn btn-success">Search</button>
+						<button type="submit" className="btn btn-warning">Search</button>
 					</form>
 				</div>
 			</div>

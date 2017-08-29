@@ -1,12 +1,20 @@
 import React from 'react';
 
+import helpers from '../../../utils/helpers.js';
+
 export default class Results extends React.Component {
 	constructor(props) {
 		super(props);
+
+		this.handleSave = this.handleSave.bind(this);
+	}
+
+	handleSave(data, index) {
+		this.refs['btn'+index].setAttribute("disabled", "disabled");
+		helpers.saveArticle(data);
 	}
 
 	render() {
-		console.log(this.props.results);
 		if (this.props.results.length > 0) {
 			return (
 				<div className='panel'>
@@ -36,10 +44,10 @@ export default class Results extends React.Component {
 												</div>
 											</div>
 											<div className='article-button'>
-											<button className='btn btn-success btn-sm'>Save</button>
+												<button className='btn btn-success btn-sm' ref={'btn'+index} onClick={(e) => this.handleSave(result, index)}>Save</button>
 											</div>
 										</div>
-										)
+									)
 								})
 							}
 					</div>
